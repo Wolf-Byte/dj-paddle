@@ -23,6 +23,8 @@ except Exception as e:
     msg = "failed to convert 'DJPADDLE_PUBLIC_KEY'; original message: {}".format(e)
     raise ImproperlyConfigured(msg)
 
+DJPADDLE_SANDBOX = getattr(settings, "DJPADDLE_SANDBOX", False)
+
 DJPADDLE_SUBSCRIBER_MODEL = getattr(settings, "DJPADDLE_SUBSCRIBER_MODEL", settings.AUTH_USER_MODEL)
 
 DJPADDLE_LINK_STALE_SUBSCRIPTIONS = getattr(settings, "DJPADDLE_LINK_STALE_SUBSCRIPTIONS", True)
